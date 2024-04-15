@@ -1,0 +1,68 @@
+<% layout("/layout/boilerplate.ejs") %>
+<div class="row">
+  <div class="col-8 offset-2">
+    <form action="/listing" method="post">
+      <h3>Create your new list</h3>
+      <div class="mb-3">
+        <label for="title" class="form-lable">Title</label>
+        <input
+          name="listing[title]"
+          type="text"
+          placeholder="Enter a catchy title"
+          class="form-control"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-lable">Description</label>
+        <textarea
+          name="listing[description]"
+          cols="20"
+          rows="5"
+          placeholder="Enter description"
+          class="form-control"
+        ></textarea>
+      </div>
+      <div class="mb-3">
+        <label for="image" class="form-lable">Image URL</label>
+        <input
+          name="listing[image]"
+          type="text"
+          placeholder="enter image url"
+          class="form-control"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="form-lable">Price</label>
+          <input
+            name="listing[price]"
+            type="number"
+            placeholder="enter price"
+            class="form-control"
+          />
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="location" class="form-lable">Location</label>
+          <input
+            name="listing[location]"
+            type="text"
+            placeholder="enter location"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-lable">Country</label>
+        <input
+          name="listing[country]"
+          type="text"
+          placeholder="enter country"
+          class="form-control"
+        />
+      </div>
+      <br>
+      <button type="submit" class="btn btn-dark add-btn">ADD</button>
+      <br><br>
+    </form>
+  </div>
+</div>

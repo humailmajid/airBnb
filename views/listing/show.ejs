@@ -1,0 +1,32 @@
+<% layout("/layout/boilerplate.ejs") %>
+<body>
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card" style="width: 15rem;">
+            <!-- Card Header -->
+            <div class="card-header">
+                <h3 class="card-title font-weight-bold">Details of List</h3>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing Image" style="height: 10rem; width: 100%;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item font-weight-bold">Title: <%= listing.title %></li>
+                    <li class="list-group-item font-weight-bold">Description: <%= listing.description %></li>
+                    <li class="list-group-item font-weight-bold">Price: <%= listing.price.toLocaleString('en-PK') %> PKR</li>
+                    <li class="list-group-item font-weight-bold">Location: <%= listing.location %></li>
+                    <li class="list-group-item font-weight-bold">Country: <%= listing.country %></li>
+                </ul>
+            </div>
+            <!-- Card Footer -->
+            <div class="card-footer d-flex justify-content-between">
+                <a href="/listing/<%=listing._id%>/edit" class="btn btn-primary">Edit</a>
+                <div>
+                    <a href="/listing" class="btn btn-secondary">Back</a>
+                    <form method="post" action="/listing/<%= listing._id %>?_method=delete" style="display: inline;">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

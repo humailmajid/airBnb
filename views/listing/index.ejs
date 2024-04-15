@@ -1,0 +1,22 @@
+<% layout("/layout/boilerplate.ejs") %>
+<body>
+  <h3>All List</h3>
+  <div class="card">
+    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4">
+      <% allListings.forEach(function(listing) { %>
+      <div class="col mb-4">
+        <div class="card" style="width: 15rem">
+          <a href="/listing/<%= listing._id %>"><img src="<%= listing.image.url %>" class="card-img-top" alt="listing_img" style="height: 15rem"></a>
+          <div ></div>
+          <div class="card-body">
+            <h5 class="card-title"> <a href="/listing/<%= listing._id %>"><%= listing.title %></a>  </h5>
+            <p class="card-text">
+              <%= listing.price.toLocaleString('en-PK') %> PKR/night
+            </p>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
