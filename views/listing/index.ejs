@@ -11,8 +11,13 @@
           <div class="card-body">
             <h5 class="card-title"> <a href="/listing/<%= listing._id %>"><%= listing.title %></a>  </h5>
             <p class="card-text">
-              <%= listing.price.toLocaleString('en-PK') %> PKR/night
+              <% if (listing.price !== null ) { %>
+                <%= listing.price.toLocaleString('en-PK') %> PKR/night
+              <% } else { %>
+                Price not available
+              <% } %>
             </p>
+            
           </div>
         </div>
       </div>
